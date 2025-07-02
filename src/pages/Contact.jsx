@@ -1,6 +1,5 @@
 import React from 'react';
-import ResumePDF from '../assets/your-resume.pdf'; // Add your resume to the assets folder
-
+import ResumePDF from '../assets/Asmit-Kumar-Roy-Resume.pdf'; // Add your resume to the assets folder
 const Contact = () => {
   return (
     <section id="contact" style={{ padding: '80px 2rem' }}>

@@ -1,3 +1,4 @@
+/* src/components/Navbar.css */
 .navbar {
   position: fixed;
   top: 0;
@@ -6,52 +7,55 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: rgba(22, 22, 22, 0.2);
+  background: var(--glass-color);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+  border-bottom: 1px solid var(--border-color);
   z-index: 1000;
-  transition: background 0.3s ease;
 }
 
 .navbar-logo a {
-  color: #fff;
+  color: var(--text-color-primary);
   text-decoration: none;
   font-size: 1.5rem;
   font-weight: bold;
 }
 
 .navbar-links a {
-  color: #fff;
+  color: var(--text-color-primary);
   text-decoration: none;
   margin: 0 1rem;
   padding: 0.5rem 1rem;
-  border-radius: 5px;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+  transition: background 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
 }
 
 .navbar-links a:hover {
+  color: #fff;
   background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.5), 0 0 5px rgba(0, 123, 255, 0.8);
 }
 
 .navbar-toggle {
   display: none;
-  color: #fff;
-  font-size: 1.5rem;
+  color: var(--text-color-primary);
+  font-size: 1.8rem;
   cursor: pointer;
 }
 
+/* Sidebar for Mobile */
 .sidebar {
   position: fixed;
   top: 0;
-  right: -250px;
+  right: -280px; /* Start off-screen */
   width: 250px;
   height: 100%;
-  background: #161616;
+  background: #1e1e1e;
   display: flex;
   flex-direction: column;
   padding-top: 5rem;
-  transition: right 0.3s ease-in-out;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+  transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   z-index: 999;
 }
 
@@ -60,17 +64,24 @@
 }
 
 .sidebar a {
-  color: #fff;
+  color: var(--text-color-primary);
   text-decoration: none;
-  padding: 1rem 2rem;
-  text-align: center;
+  padding: 1.2rem 2rem;
+  text-align: left;
+  font-size: 1.1rem;
+  transition: background-color 0.3s;
 }
 
+.sidebar a:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+/* Media query for mobile view */
 @media (max-width: 768px) {
   .navbar-links {
     display: none;
   }
-
   .navbar-toggle {
     display: block;
   }

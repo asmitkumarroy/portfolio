@@ -1,9 +1,15 @@
+// src/pages/Home.jsx
 import React from 'react';
+import './Home.css';
 
 const Home = () => {
   return (
-    <section id="home" style={{ height: '100vh', paddingTop: '80px' }}>
-      <h1>Welcome to my Portfolio</h1>
+    <section id="home" className="section" style={{height: '100vh'}}>
+      <div className="hero-content">
+        <h1 className="hero-title">Hi, I'm [Your Name]</h1>
+        <p className="hero-subtitle">A Creative Web Developer</p>
+        <a href="#projects" className="hero-button">View My Work</a>
+      </div>
     </section>
   );
 };
